@@ -1,6 +1,10 @@
 const express = require('express');
 const port = 8000;
 const app = express();
+const expressLayouts = require('express-ejs-layouts');
+
+//use layouts before inorder for the routes to have access
+app.use(expressLayouts);
 
 //use express router
 app.use('/', require('./routes/index.js')); // or './routes/' 
