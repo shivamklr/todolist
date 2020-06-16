@@ -3,10 +3,15 @@ const port = 8000;
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 
+// setting up public folder for css,scipt and images
 app.use(express.static('./assets'));
 
-//use layouts before inorder for the routes to have access
+//in order for the routes to have access use layouts before 
 app.use(expressLayouts);
+
+//extract styles and scripts from sub pages into layouts
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
 
 //use express router
 app.use('/', require('./routes/index.js')); // or './routes/' 
