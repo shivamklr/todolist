@@ -3,6 +3,8 @@ const port = 8000;
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 
+app.use(express.static('./assets'));
+
 //use layouts before inorder for the routes to have access
 app.use(expressLayouts);
 
