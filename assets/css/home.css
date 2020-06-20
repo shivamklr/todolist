@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+}
+h2{
+    margin: 0;
+    display: inline-block;
+}
+form{
+    margin: 0;
+    display: inline-block;
+    margin-bottom: 1em;
+}
+.todoList{
+    padding:0;
+    margin: 0;
+    display: inline-block;
+    list-style: none;
+}
+.todoList li{
+    margin-bottom: 1em;
+}

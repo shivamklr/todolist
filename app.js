@@ -13,12 +13,16 @@ app.use(expressLayouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
+//middleware to simplify data in req object 
+app.use(express.urlencoded({"extended":false}));
+
 //use express router
 app.use('/', require('./routes/index.js')); // or './routes/' 
 
 //setting up views and views engine
 app.set('views','./views');
 app.set('view engine', 'ejs');
+
 
 app.listen(port, function(err){
     if(err){
