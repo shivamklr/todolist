@@ -1,24 +1,65 @@
+body{
+    display: flex;
+    justify-content: center;
+}
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: sans-serif;
+    font-size: 1.5em;
+    width: 300px;
 }
-h2{
+.instruction{
     margin: 0;
-    display: inline-block;
 }
 form{
     margin: 0;
-    display: inline-block;
-    margin-bottom: 1em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.textIn{
+    width: 69%;
+    font-family: sans-serif;
+    font-size: 1em;
+}
+.submitBtn{
+    width: 30%;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 1em;
 }
 .todoList{
+    width: 100%;
     padding:0;
     margin: 0;
     display: inline-block;
     list-style: none;
 }
-.todoList li{
-    margin-bottom: 1em;
+.itemContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.itemText{
+    width: 70%;
+    word-break: break-all;
+}
+.strike{
+    text-decoration: line-through;
+}
+.actionButton{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.tick{
+    color: rgb(75, 238, 75);
+    background-color: rgba(0, 0, 0, 0);
+}
+.bin{
+    color : red;
+    background-color: rgba(0, 0, 0, 0);
 }

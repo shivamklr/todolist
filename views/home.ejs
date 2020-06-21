@@ -1,15 +1,25 @@
-<!-- make sure to include fontawesome and bootstrap -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="undefined" crossorigin="anonymous" />
 <link rel="stylesheet" href="css/home.css">
+
 <div class="container">
-    <h2>Todo List | <%= title %></h1>
-    <form action="/users/profile" method="post">
-        <input type="text" name="todoText" required>
-        <button type="submit"><i class="fas fa-arrow-circle-right"></i></button>
+    <div class="banner">Todo <small>list</small></div>
+    <form action="/item/add" method="post">
+        <input class="textIn" type="text" name="todoText" required>
+        <button class ="submitBtn" type="submit">Add</button>
     </form>
     <ul class="todoList">
         <% for (let item of items) { %>
-            <li><%= item.todoText %></li>
+            <div class="itemContainer">
+                <% if(!item.status == 0){ %>
+                    <li class="itemText strike"><%= item.todoText %></li>
+                <% } else {%>
+                    <li class="itemText"><%= item.todoText %></li>
+                <% } %>
+                <div class="actionButton">
+                    <a class="tick" href="/item/update/?itemText=<%=item.todoText%>&status=<%=item.status%>"><i class="fas fa-check"></i></a>
+                    <a class="bin" href="/item/delete/?itemText=<%=item.todoText%>"><i class="fas fa-trash-alt"></i></a>
+                </div>
+            </div>
         <% } %>
     </ul>
 </div>

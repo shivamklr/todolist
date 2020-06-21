@@ -14,7 +14,8 @@ app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
 //middleware to simplify data in req object 
-app.use(express.urlencoded({"extended":false}));
+// app.use(express.urlencoded({"extended":false}));
+app.use(express.urlencoded({"extended":true}));
 
 //use express router
 app.use('/', require('./routes/index.js')); // or './routes/' 

@@ -6,6 +6,13 @@ module.exports.home = function(req, res){
         title:"Home",
         items : items,
     });
-    // return res.end('<h1>Express is up for TODO App</h1>');
 };
+
+// module.exports.itemAdd = function(req, res){
+//     console.log('home controller for post reached');
+//     const items = require('../models/dummy');
+//     req.body.status = 0; // setting status of todo to 0 by default
+//     items.push(req.body);
+//     res.redirect('back');
+// };
 //module.exports.actionName = function(rq,rs)
