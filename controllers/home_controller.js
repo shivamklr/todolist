@@ -1,18 +1,19 @@
 module.exports.home = function(req, res){
     console.log('home controller accessed');
     
-    const items = require('../models/dummy');
-    return res.render('home',{ // render an ejs file named home
-        title:"Home",
-        items : items,
+    const db = require('../config/mongoose'); 
+    const List  = require('../models/items');
+
+    List.find({}, function(err, items){
+        if(err){
+            console.log(`Error $(err)`);
+            return;
+        }
+        res.render('home',{ // render an ejs file named home
+            title:"Home",
+            items : items,
+        });
     });
+    // const items = require('../models/dummy');
 };
 
-// module.exports.itemAdd = function(req, res){
-//     console.log('home controller for post reached');
-//     const items = require('../models/dummy');
-//     req.body.status = 0; // setting status of todo to 0 by default
-//     items.push(req.body);
-//     res.redirect('back');
-// };
-//module.exports.actionName = function(rq,rs)

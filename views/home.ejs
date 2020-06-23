@@ -16,8 +16,8 @@
                     <li class="itemText"><%= item.todoText %></li>
                 <% } %>
                 <div class="actionButton">
-                    <a class="tick" href="/item/update/?itemText=<%=item.todoText%>&status=<%=item.status%>"><i class="fas fa-check"></i></a>
-                    <a class="bin" href="/item/delete/?itemText=<%=item.todoText%>"><i class="fas fa-trash-alt"></i></a>
+                    <a class="tick" href="/item/update/?id=<%=item._id%>&status=<%=item.status%>"><i class="fas fa-check"></i></a>
+                    <a class="bin" href="/item/delete/?id=<%=item._id%>"><i class="fas fa-trash-alt"></i></a>
                 </div>
             </div>
         <% } %>
