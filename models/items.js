@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const todoSchema = new mongoose.Schema({
+const todoSchema = new mongoose.Schema({// creating a structure/schema for the db
     todoText:{
         type: String,
         required : true,
@@ -11,5 +11,5 @@ const todoSchema = new mongoose.Schema({
     }
 });
 
-const List = mongoose.model('List', todoSchema);
+const List = mongoose.model('List', todoSchema);//instantiating a mongoose model
 module.exports = List;

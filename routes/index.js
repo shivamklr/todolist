@@ -7,6 +7,6 @@ console.log("router loaded");
 
 router.get('/', homeController.home);
 
-router.use('/item', require('./item.js'));
+router.use('/item', require('./item.js'));// if the home or root have item in it call middleware
 
 module.exports = router;

@@ -1,7 +1,9 @@
+/* making the body flex to center the container */
 body{
     display: flex;
     justify-content: center;
 }
+/* making container flex to make a column */
 .container{
     display: flex;
     flex-direction: column;
